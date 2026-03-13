@@ -1,0 +1,12 @@
+name: bioinfo_case
+channels:
+- conda-forge
+- bioconda
+- defaults
+dependencies:
+- python=3.9
+- pandas
+- numpy
+- biopython
+- matplotlib
+- seaborn

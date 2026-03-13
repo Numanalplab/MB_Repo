@@ -1,0 +1,12 @@
+data/*
+results/*
+*.fastq
+*.fq
+*.bam
+*.vcf
+*.gz
+
+__pycache__/
+.DS_Store
+.env
+.ipynb_checkpoints/
