@@ -1,5 +1,9 @@
 data/*
+!data/.gitkeep
+
 results/*
+!results/.gitkeep
+
 *.fastq
 *.fq
 *.bam
@@ -8,5 +12,3 @@ results/*
 
 __pycache__/
 .DS_Store
-.env
-.ipynb_checkpoints/
