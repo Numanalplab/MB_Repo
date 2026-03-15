@@ -60,11 +60,15 @@ The following metrics were derived from the analysis of the ```barcode77.fastq``
 ||
 
 ## Interpretation
--Read Length: The distribution exhibits a significant "long tail" characteristic reaching over 600 kb, confirming successful ultra-long read sequencing. Logarithmic scaling was applied to the visualization to accurately represent the wide range of lengths.
+- Read Length: The distribution exhibits a significant "long tail" characteristic reaching over 600 kb, confirming successful ultra-long read sequencing. Logarithmic scaling was applied to the visualization to accurately represent the wide range of lengths.
 
--Quality Score: An average Phred score of $17.89$ was observed. This corresponds to a base-calling accuracy of approximately 98.4%. While sufficient for long-read data, a Q10 or Q12 filter is recommended for high-precision downstream assembly.
+- Quality Score: An average Phred score of $17.89$ was observed. This corresponds to a base-calling accuracy of approximately 98.4%. While sufficient for long-read data, a Q10 or Q12 filter is recommended for high-precision downstream assembly.
 
--GC Content: The stable distribution around 53% aligns with expected biological profiles, suggesting a clean run without major systematic biases.
+- GC Content: The stable distribution around 53% aligns with expected biological profiles, suggesting a clean run without major systematic biases.
 
 ## Communication
 Dear Professor Kılıç,
+The sequencing run has been successfully validated. The integration of Python for backend processing and R for frontend visualization provides a robust framework for future datasets. The entire workflow is containerized via Docker to ensure that Professor Kılıç or any other collaborator can reproduce these exact results regardless of their local operating system or software versions.
+
+Developed by Numan Alp İlhan
+Date March 2026
