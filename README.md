@@ -66,9 +66,25 @@ The following metrics were derived from the analysis of the ```barcode77.fastq``
 
 - GC Content: The stable distribution around 53% aligns with expected biological profiles, suggesting a clean run without major systematic biases.
 
+## Future Directions
+In this case study, I utilized a custom Python/R pipeline managed via Docker. While industry-standard workflow managers like Nextflow and Snakemake exist, I deliberately chose not to use them for this particular project. Here are some reasons:
+
+- In this project, I analyzed a s single sample with a linear two-step process (Parse -> Visualize) But workflow manager tools are designed for high-throughput scaling. If I had 1000 FASTQ files to process in parallel on a cluster or cloud, Nextflow or Snakemake would be mandatory. For a single-sample case study, the overhead of writing a `Snakefile` or a Nextflow `.nf`script adds unnecessary complexity.
+
+- Workflow managers excel at "resuming" failed pipelines. If a pipeline with 50 steps fails at step 49, Nextflow knows not to rerun the first 48. Since my pipeline is very fast and only has two steps, the "resume" feature provides negligible benefit compared to the effort of setting it up.
+
+- If this project were to evolve, I would transition to a workflow manager under these conditions:
+
+      1- Multi-sample processing: Adding 10+ samples simultaneously.
+      2- Complex DAGs: If I added alignment, variant calling, and functional annotation steps.
+      3- Cloud integration: If I needed to run this on AWS Batch or Azure.
+
+To summarize, we didn't use a sledgehammer to crack a nut.
+
 ## Communication
 Dear Professor Kılıç,
 The sequencing run has been successfully validated. The integration of Python for backend processing and R for frontend visualization provides a robust framework for future datasets. The entire workflow is containerized via Docker to ensure that Professor Kılıç or any other collaborator can reproduce these exact results regardless of their local operating system or software versions.
 
 Developed by Numan Alp İlhan
+
 Date March 2026
